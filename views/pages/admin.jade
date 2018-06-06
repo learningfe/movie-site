@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+    .container
+        form(method="post", action="/admin/movie/new")
+            input(type="hidden", name="_id", value="#{movie._id}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputTitle") 电影名字
+                .col-sm-10
+                    input#inputTitle.form-control(type="text", name="title", value="#{movie.title}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputDoctor") 电影导演
+                .col-sm-10
+                    input#inputDoctor.form-control(type="text", name="doctor", value="#{movie.doctor}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputCountry") 国家
+                .col-sm-10
+                    input#inputCountry.form-control(type="text", name="country", value="#{movie.country}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputLanguage") 语种
+                .col-sm-10
+                    input#inputLanguage.form-control(type="text", name="language", value="#{movie.language}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputPoster") 海报地址
+                .col-sm-10
+                    input#inputPoster.form-control(type="text", name="poster", value="#{movie.poster}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputFlash") 片源地址
+                .col-sm-10
+                    input#inputFlash.form-control(type="text", name="flash", value="#{movie.flash}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputYear") 上映年份
+                .col-sm-10
+                    input#inputYear.form-control(type="text", name="year", value="#{movie.year}")
+            .form-group.row
+                label.col-sm-2.col-form-label(for="inputSummary") 电影简介
+                .col-sm-10
+                    textarea#inputSummary.form-control(name="summary", rows="10")
+            .form-group.row
+                .offset-sm-2.col-sm-10
+                    button.btn.btn-primary(type="submit") 录入
